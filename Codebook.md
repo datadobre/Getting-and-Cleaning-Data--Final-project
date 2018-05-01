@@ -40,6 +40,24 @@ The following files are included in the dataset:
 * 'test/X_test.txt': Test set.
 * 'test/y_test.txt': Test labels.
 
+The measured data, selected for this database, corresponds to accelerometer and gyroscope 3-axial raw signals, denoted by tAcc-XYZ and tGyro-XYZ, time series with a sampling rate Ts = 0.020 s (50 Hz).
+
+Manipulations on the raw accelerometer data:
+* Filter the data using a median filter - in order to eliminate the outliers
+* 3rd order low pass Butterworth filter with a corner frequency of 20 Hz - to remove noise
+* Separate the signals into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ)
+* Body linear acceleration is derived in time to obtain Jerk signals (tBodyAccJerk-XYZ)
+* Magnitude of these 3-dimensional signals is calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag)
+* a Fast Furier Transform (FFT) is applied to some of these signals (fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyAccJerkMag)
+
+Manipulations on the raw accelerometer data:
+* Filter the data using a median filter - in order to eliminate the outliers
+* 3rd order low pass Butterworth filter with a corner frequency of 20 Hz - to remove noise
+* Angular velocities are derived in time to obtain Jerk signals (tBodyGyroJerk-XYZ)
+* Magnitude of these 3-dimensional signals is calculated using the Euclidean norm (tBodyGyroMag, tBodyGyroJerkMag)
+* a Fast Furier Transform (FFT) is applied to some of these signals (fBodyGyro-XYZ, fBodyGyroJerk-XYZ, fBodyGyroJerkMag)
+
+
 ## Step 1 - Merge the training and the test sets in order to create a data set
 
 Read the features and recover features names: "feature.txt" : file contains a list of all features, the data is described by 561 observations of two variable: *features_Id* and *features_Names*
