@@ -79,4 +79,5 @@ names(res_data)<-gsub("Gyro","Gyroscope",names(res_data))
 
 
 final_data<- ddply(res_data, c("subject_Id","activity_Id"), numcolwise(mean))
+final_data<-final_data[,-2]
 write.table(final_data,file="tidydata_fproject.txt",row.names = FALSE)
